@@ -2,7 +2,7 @@
 int sudoku[9][9]; //store entire sudoku
 void solvesudoku(int,int);
 
-int checkrow(int row,int num);
+int checkrow(int row,int num)
 {
     //checks whether we can put the number(num) in the row(row)
     int column;
@@ -79,10 +79,11 @@ void display()
     for(row=0;row<9;row++)
     {
         for (column=0;column<9;column++)
-        printf("%d",sudoku[row][column]);
-        
+       { printf("%d",sudoku[row][column]);
+       }
+     }
         printf("\n");
-    }
+    
 }
 
 void solvesudoku(int row,int column)
@@ -94,7 +95,7 @@ void solvesudoku(int row,int column)
     if (sudoku[row][column]!=0)
     {
         //if the value filled at a cell is not zero than 
-        navigate();
+        navigate(row, column);
     }
     else
     {
